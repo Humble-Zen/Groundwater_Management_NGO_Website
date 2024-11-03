@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Groundwater Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'righteous', sans-serif;
+        }
+
+        :root {
+            --primary: #0066cc;
+            --secondary: #00994c;
+            --light: #f5f9ff;
+            --dark: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            background: rgba(81, 171, 255, 0.87);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+    position: relative;
+    padding: 8rem 2rem 4rem;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
+    border-radius: 15px; /* Optional: to round the corners */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle border for more glass-like look */
+    padding: 2rem;
+}
+
+
+        .hero h1 {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 3rem;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #1e71c5;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background:rgba(122, 236, 211, 0.342);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgb(255, 255, 255);
+            padding: 2rem;
+            /* border-radius: 10px; */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Statistics Section */
+        .statistics {
+            padding: 4rem 2rem;
+            background: rgb(54, 218, 230);
+            color: rgb(255, 255, 255);
+            
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 5rem;
+            text-align: center;
+            background-color: rgba(127, 133, 218, 0.61);
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        .stat-item h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            background-color: rgba(122, 236, 211, 0.342);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: blue;
+        }
+        
+        .about-text p{
+          font-size: 1.2rem;
+        }
+        .about-image{
+            overflow: hidden;
+        }
+
+
+        .about-image img {
+            width: 100%;
+            transition: transform 0.5s ease;
+            /* border-radius: 10px; */
+        }
+
+        .about-image img:hover{
+            transform:  scale(1.1);
+        }
+
+    
+
+        /*carousel section*/
+        .carousel-section {
+    padding: 2rem;
+    background: rgb(191, 252, 237);
+}
+
+.carousel-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 10px; */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 700px;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: rgba(122, 236, 211, 0.342);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(1, 247, 255, 0.349);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links a {
+                margin: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">JALVEER GATHA</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="aboutNGO.html">Our Gatha</a>
+                <a href="game.html">Game</a>
+                <a href="teaching.html">Learn</a>
+                <a href="registration.html">SPOC</a>
+                <a href="Donation.html">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video autoplay muted loop class="background-video">
+            <source src="../Assets/whalevid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Protecting Our Water Resources</h1>
+            <p>Join us in our mission to sustainably manage and protect groundwater resources for future generations.</p>
+            <a href="#contact" class="cta-button">Send us a Message</a>
+        </div>
+    </section>
+    
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💧</div>
+                <h3>Water Quality Monitoring</h3>
+                <p>Continuous monitoring and assessment of groundwater quality using advanced technology.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Sustainable Management</h3>
+                <p>Implementing best practices for long-term groundwater resource sustainability.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Data Analysis</h3>
+                <p>Comprehensive analysis of groundwater data to inform management decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h2>1000+</h2>
+                <p>Wells Monitored</p>
+            </div>
+            <div class="stat-item">
+                <h2>50+</h2>
+                <p>Communities Served</p>
+            </div>
+            <div class="stat-item">
+                <h2>95%</h2>
+                <p>Quality Improvement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Commitment to Water Conservation</h2>
+                <p>We are dedicated to protecting and managing groundwater resources through innovative solutions and sustainable practices. Our team of experts works tirelessly to ensure clean and sustainable water for future generations.</p>
+                <p>Through advanced monitoring systems and community engagement, we're making a real difference in groundwater conservation.</p>
+            </div>
+            <div class="about-image">
+                <img src="../Assets/water1.webp" alt="Groundwater Conservation">
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="../Assets/lake.jpg" alt="Water Conservation 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../Assets/caro2.jpg" alt="Water Conservation 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../Assets/caro3.jpg" alt="Water Conservation 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../Assets/lake2.jpg" alt="Water Conservation 4">
+                </div>
+            </div>
+            <button class="carousel-btn prev">←</button>
+            <button class="carousel-btn next">→</button>
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-form">
+            <h2>Give your feedback</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Dedicated to protecting and managing groundwater resources for a sustainable future.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="game.html">Game</a>
+                <a href="teaching.html">Learn</a>
+                <a href="registration.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@groundwater.org</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const dotsContainer = document.querySelector('.carousel-dots');
+        
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+        
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+        
+            const dots = document.querySelectorAll('.dot');
+        
+            function updateDots() {
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+        
+            function goToSlide(index) {
+                currentIndex = index;
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                updateDots();
+            }
+        
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                goToSlide(currentIndex);
+            }
+        
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                goToSlide(currentIndex);
+            }
+        
+            // Event listeners
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+        
+            // Auto-advance slides every 5 seconds
+            let intervalId = setInterval(nextSlide, 5000);
+        
+            // Pause auto-advance on hover
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(intervalId);
+            });
+        
+            carousel.addEventListener('mouseleave', () => {
+                intervalId = setInterval(nextSlide, 5000);
+            });
+        });
+        </script>
+</body>
+</html>
