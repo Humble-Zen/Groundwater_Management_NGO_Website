@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Groundwater Conservation: Protecting Our Hidden Resource</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'righteous', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-image: url(../Assets/savewater.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.40);
+            z-index: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgb(191, 252, 237), rgba(0, 191, 255, 0.9));
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-section {
+            background: rgb(191, 252, 237);;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .conservation-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #1e90ff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #1e90ff;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background-color: rgba(230, 243, 255, 0.9);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border: 1px solid rgba(30, 144, 255, 0.3);
+        }
+
+        .fact-box {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.9), rgba(0, 191, 255, 0.9));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .water-cycle {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .water-cycle img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .conservation-tips {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Groundwater Conservation</h1>
+            <p>Understanding and Protecting Our Underground Water Resources</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="info-section">
+            <h2>What is Groundwater?</h2>
+            <p>Groundwater is the water found underground in the cracks and spaces in soil, sand, and rock. It is stored in and moves slowly through geologic formations called aquifers.</p>
+            
+            <div class="fact-box">
+                <strong>Did you know?</strong> Groundwater provides drinking water for 51% of the total U.S. population and 99% of the rural population!
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Why Conservation Matters</h2>
+            <div class="water-cycle">
+                <img src="../Assets/caro1.webp" alt="Water Cycle Diagram" />
+            </div>
+            <div class="highlight">
+                <p>Groundwater is being depleted at alarming rates due to:</p>
+                <ul>
+                    <li>Over-pumping for agriculture and urban use</li>
+                    <li>Pollution from industrial and agricultural activities</li>
+                    <li>Climate change affecting recharge rates</li>
+                    <li>Population growth increasing demand</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Conservation Tips</h2>
+            <div class="conservation-tips">
+                <div class="tip-card">
+                    <h3>At Home</h3>
+                    <ul>
+                        <li>Fix leaky faucets and pipes</li>
+                        <li>Install water-efficient appliances</li>
+                        <li>Take shorter showers</li>
+                        <li>Collect rainwater for gardens</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>In the Garden</h3>
+                    <ul>
+                        <li>Water plants early morning or evening</li>
+                        <li>Use drought-resistant plants</li>
+                        <li>Apply mulch to retain moisture</li>
+                        <li>Install drip irrigation systems</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>In the Community</h3>
+                    <ul>
+                        <li>Support water conservation policies</li>
+                        <li>Report water waste</li>
+                        <li>Participate in local cleanup efforts</li>
+                        <li>Educate others about conservation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Take Action Now</h2>
+            <p>Every drop counts! Start implementing these conservation practices today to help protect our valuable groundwater resources for future generations.</p>
+            <div class="highlight">
+                <strong>Remember:</strong> Groundwater is a finite resource. Once depleted or contaminated, aquifers can take hundreds or thousands of years to replenish.
+            </div>
+        </section>
+    </main>
+</body>
+</html>
